@@ -79,12 +79,12 @@ get_campaigns() {
 }
 
 get_campaign_results() {
-  local campaign_id=$1
+ campaign_id=$1
  curl  -s --location --insecure ''$GOPHISH_URL'/api/campaigns/'$campaign_id'/results' --header 'Authorization: Bearer '$API_KEY''
 }
 
 parse_results_and_count_clicks() {
-  local campaign_results=$1
+   campaign_results=$1
   for email in $(echo "$campaign_results" | jq -r '.results[] | select(.status=="Clicked Link") | .email'); do
     email_clicks["$email"]=$((email_clicks["$email"] + 1))
   done
