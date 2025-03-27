@@ -1,1 +1,1 @@
-Pasrsing and prepairing json for grafana report 
+Parsing gopgish api and prepairing json for grafana report 
